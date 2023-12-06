@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6miyt28u4lla"]
+[gd_scene load_steps=13 format=3 uid="uid://b6miyt28u4lla"]
 
 [ext_resource type="Script" path="res://BG.gd" id="1_ipg8b"]
 [ext_resource type="Texture2D" uid="uid://o2leabmackll" path="res://BG Image.png" id="2_feuur"]
@@ -488,7 +488,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	text = \"HP: \" + str(get_node(\"../../main_character/main_character\").health)
+	text = \"HP: \" + str(Game.Player_HP)
+"
+
+[sub_resource type="GDScript" id="GDScript_hhj76"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"Gold: \" + str(Game.gold)
 "
 
 [node name="Node" type="Node"]
@@ -585,6 +599,7 @@ position = Vector2(5, 404)
 scale = Vector2(1.46997, 1.46997)
 
 [node name="mobs" type="Node2D" parent="."]
+position = Vector2(324, 1)
 
 [node name="Enemy" parent="mobs" instance=ExtResource("4_3sw8t")]
 position = Vector2(126, 353)
@@ -613,3 +628,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
 text = "HP"
 script = SubResource("GDScript_aijf0")
+
+[node name="gold" type="Label" parent="UI"]
+offset_left = 9.0
+offset_top = 77.0
+offset_right = 49.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Gold"
+script = SubResource("GDScript_hhj76")

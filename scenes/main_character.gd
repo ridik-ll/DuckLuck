@@ -36,7 +36,9 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	if health <= 0:
+	if Game.Player_HP <= 0:
+		Game.Player_HP = 10
+		Utils.saveGame()
 		self.queue_free()
 		get_tree().change_scene_to_file("res://UI.tscn")
 	

@@ -1,7 +1,10 @@
 extends Node
 
-# Import the necessary modules
-# For quitting the game
+
+func _ready():
+	#Utils.saveGame()
+	Utils.loadGame()
+
 func _on_quit_pressed():
 	get_tree().quit()  # This function quits the game
 

@@ -241,10 +241,10 @@ height = 86.0
 radius = 206.022
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apsnn"]
-size = Vector2(57, 20.75)
+size = Vector2(32, 26.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kv34p"]
-size = Vector2(50, 20)
+size = Vector2(67, 62)
 
 [node name="Enemy" type="CharacterBody2D"]
 texture_filter = 1
@@ -273,13 +273,13 @@ shape = SubResource("CircleShape2D_heman")
 [node name="PlayerKill" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerKill"]
-position = Vector2(-2.5, -22.625)
+position = Vector2(4, -37)
 shape = SubResource("RectangleShape2D_apsnn")
 
 [node name="PlayerCollision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
-position = Vector2(7, 28)
+position = Vector2(2.5, 11)
 shape = SubResource("RectangleShape2D_kv34p")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]

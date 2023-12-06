@@ -108,7 +108,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtofh"]
 size = Vector2(20, 26)
 
-[node name="main_character2" type="CharacterBody2D"]
+[node name="main_character" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_qrrar")
 
