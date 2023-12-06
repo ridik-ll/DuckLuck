@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://113s8qejr66d"]
+
+[ext_resource type="Script" path="res://BG.gd" id="1_7jvcb"]
+[ext_resource type="Texture2D" uid="uid://o2leabmackll" path="res://BG Image.png" id="2_74kqc"]
+[ext_resource type="Texture2D" uid="uid://fv0ffs8vhs6p" path="res://middle.png" id="2_mmhmm"]
+[ext_resource type="Texture2D" uid="uid://bos3w6v5lvs38" path="res://Big Clouds.png" id="3_d8csl"]
+[ext_resource type="Texture2D" uid="uid://dbypwdgfdngi4" path="res://Small Cloud 1.png" id="4_ktcun"]
+
+[node name="BG" type="ParallaxBackground"]
+script = ExtResource("1_7jvcb")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1149, 0)
+
+[node name="BgImage" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(578, 322.5)
+scale = Vector2(2.99479, 4.99219)
+texture = ExtResource("2_74kqc")
+
+[node name="Clouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="BigClouds" type="Sprite2D" parent="Clouds"]
+position = Vector2(291.5, 277.25)
+scale = Vector2(1.07812, 1.19307)
+texture = ExtResource("3_d8csl")
+
+[node name="SmallCloud1" type="Sprite2D" parent="Clouds"]
+position = Vector2(470, 145)
+scale = Vector2(1.31081, 1.45833)
+texture = ExtResource("4_ktcun")
+
+[node name="BigClouds2" type="Sprite2D" parent="Clouds"]
+position = Vector2(773.5, 277.75)
+scale = Vector2(1.07812, 1.19307)
+texture = ExtResource("3_d8csl")
+
+[node name="SmallCloud2" type="Sprite2D" parent="Clouds"]
+position = Vector2(952, 145.5)
+scale = Vector2(1.31081, 1.45833)
+texture = ExtResource("4_ktcun")
+
+[node name="BigClouds3" type="Sprite2D" parent="Clouds"]
+position = Vector2(1255.5, 276.75)
+scale = Vector2(1.07812, 1.19307)
+texture = ExtResource("3_d8csl")
+
+[node name="SmallCloud3" type="Sprite2D" parent="Clouds"]
+position = Vector2(1434, 144.5)
+scale = Vector2(1.31081, 1.45833)
+texture = ExtResource("4_ktcun")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1232, 0)
+
+[node name="Middle" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(89, 460)
+texture = ExtResource("2_mmhmm")
+
+[node name="Middle2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(265, 460)
+texture = ExtResource("2_mmhmm")
+
+[node name="Middle3" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(441, 460)
+texture = ExtResource("2_mmhmm")
+
+[node name="Middle4" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(617, 460)
+texture = ExtResource("2_mmhmm")
+
+[node name="Middle5" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(793, 461)
+texture = ExtResource("2_mmhmm")
+
+[node name="Middle6" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(969, 461)
+texture = ExtResource("2_mmhmm")
+
+[node name="Middle7" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1145, 461)
+texture = ExtResource("2_mmhmm")

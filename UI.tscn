@@ -1,34 +1,26 @@
 [gd_scene load_steps=3 format=3 uid="uid://cii1ur0yy81s7"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_emuhj"]
-[ext_resource type="Texture2D" uid="uid://cyfas7l3k2pvd" path="res://Purple.png" id="2_21tjy"]
+[ext_resource type="PackedScene" uid="uid://113s8qejr66d" path="res://BG.tscn" id="2_frlr8"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_emuhj")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_21tjy")
-stretch_mode = 1
-
 [node name="Play" type="Button" parent="."]
-offset_left = 477.0
-offset_top = 153.0
-offset_right = 679.0
-offset_bottom = 257.0
+offset_left = 472.0
+offset_top = 158.0
+offset_right = 718.0
+offset_bottom = 312.0
 text = "Play"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 479.0
-offset_top = 363.0
-offset_right = 681.0
-offset_bottom = 467.0
+offset_left = 475.0
+offset_top = 399.0
+offset_right = 724.0
+offset_bottom = 546.0
 text = "Quit"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_frlr8")]
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
