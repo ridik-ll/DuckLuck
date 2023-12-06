@@ -1,23 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://cii1ur0yy81s7"]
+[gd_scene load_steps=4 format=3 uid="uid://cii1ur0yy81s7"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_emuhj"]
 [ext_resource type="PackedScene" uid="uid://113s8qejr66d" path="res://BG.tscn" id="2_frlr8"]
+[ext_resource type="Theme" uid="uid://baxt7lf7xemws" path="res://Dedault1.tres" id="2_st5cu"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_emuhj")
 
 [node name="Play" type="Button" parent="."]
+texture_filter = 1
 offset_left = 477.0
 offset_top = 399.0
 offset_right = 723.0
 offset_bottom = 496.0
+theme = ExtResource("2_st5cu")
 text = "Play"
 
 [node name="Quit" type="Button" parent="."]
+texture_filter = 1
 offset_left = 476.0
 offset_top = 524.0
 offset_right = 722.0
 offset_bottom = 618.0
+theme = ExtResource("2_st5cu")
 text = "Quit"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_frlr8")]

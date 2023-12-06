@@ -14,9 +14,9 @@ func _physics_process(delta):
 		main_character = get_node("../../main_character/main_character")
 		var direction = (main_character.global_position - self.global_position).normalized()
 		if direction.x > 0:
-			get_node("AnimatedSprite2D").flip_h = false
-		else:
 			get_node("AnimatedSprite2D").flip_h = true
+		else:
+			get_node("AnimatedSprite2D").flip_h = false
 		velocity.x = direction.x * speed
 		
 	else:
