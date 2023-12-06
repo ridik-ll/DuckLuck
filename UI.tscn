@@ -7,17 +7,17 @@
 script = ExtResource("1_emuhj")
 
 [node name="Play" type="Button" parent="."]
-offset_left = 472.0
-offset_top = 158.0
-offset_right = 718.0
-offset_bottom = 312.0
+offset_left = 477.0
+offset_top = 399.0
+offset_right = 723.0
+offset_bottom = 496.0
 text = "Play"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 475.0
-offset_top = 399.0
-offset_right = 724.0
-offset_bottom = 546.0
+offset_left = 476.0
+offset_top = 524.0
+offset_right = 722.0
+offset_bottom = 618.0
 text = "Quit"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_frlr8")]
