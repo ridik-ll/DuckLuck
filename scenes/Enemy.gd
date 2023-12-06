@@ -12,12 +12,13 @@ func _physics_process(delta):
 		if get_node("AnimatedSprite2D").animation != "hit":
 			get_node("AnimatedSprite2D").play("run")
 		main_character = get_node("../../main_character/main_character")
-		var direction = (main_character.position - self.position).normalized()
+		var direction = (main_character.global_position - self.global_position).normalized()
 		if direction.x > 0:
-			get_node("AnimatedSprite2D").flip_h = true
-		else:
 			get_node("AnimatedSprite2D").flip_h = false
+		else:
+			get_node("AnimatedSprite2D").flip_h = true
 		velocity.x = direction.x * speed
+		
 	else:
 		velocity.x = 0
 		if get_node("AnimatedSprite2D").animation != "hit":
