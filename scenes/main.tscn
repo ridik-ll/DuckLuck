@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6miyt28u4lla"]
+[gd_scene load_steps=12 format=3 uid="uid://b6miyt28u4lla"]
 
 [ext_resource type="Script" path="res://BG.gd" id="1_ipg8b"]
 [ext_resource type="Texture2D" uid="uid://o2leabmackll" path="res://BG Image.png" id="2_feuur"]
@@ -477,6 +477,20 @@ texture = ExtResource("2_tsbcu")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xv1y7")
 
+[sub_resource type="GDScript" id="GDScript_aijf0"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"HP: \" + str(get_node(\"../../main_character/main_character\").health)
+"
+
 [node name="Node" type="Node"]
 
 [node name="BG" type="ParallaxBackground" parent="."]
@@ -575,3 +589,27 @@ scale = Vector2(1.46997, 1.46997)
 [node name="Enemy" parent="mobs" instance=ExtResource("4_3sw8t")]
 position = Vector2(126, 353)
 scale = Vector2(0.528691, 0.528691)
+
+[node name="Enemy2" parent="mobs" instance=ExtResource("4_3sw8t")]
+position = Vector2(305, 338)
+scale = Vector2(0.528691, 0.528691)
+
+[node name="Enemy3" parent="mobs" instance=ExtResource("4_3sw8t")]
+position = Vector2(393, 350)
+scale = Vector2(0.528691, 0.528691)
+
+[node name="Enemy4" parent="mobs" instance=ExtResource("4_3sw8t")]
+position = Vector2(524, 349)
+scale = Vector2(0.528691, 0.528691)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="UI"]
+offset_left = 9.0
+offset_top = 40.0
+offset_right = 49.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "HP"
+script = SubResource("GDScript_aijf0")
