@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7vafw1bu5jib"]
+
+[ext_resource type="Texture2D" uid="uid://dxcbk1hrcan8e" path="res://cherry.png" id="1_vvqtm"]
+
+[sub_resource type="GDScript" id="GDScript_ehekc"]
+script/source = "extends Area2D
+
+
+
+	
+
+func _on_body_entered(body):
+	get_node(\"AnimatedSprite2D\").play(\"Idle\")
+	if body.name == \"main_character\":
+		Game.gold += 100
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, \"position\", position - Vector2(0,50), 1)
+		tween.tween_callback(queue_free)
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jdx2"]
+radius = 8.06226
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipupf"]
+atlas = ExtResource("1_vvqtm")
+region = Rect2(0, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fnvu"]
+atlas = ExtResource("1_vvqtm")
+region = Rect2(21, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fekia"]
+atlas = ExtResource("1_vvqtm")
+region = Rect2(42, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uih2g"]
+atlas = ExtResource("1_vvqtm")
+region = Rect2(63, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_748mp"]
+atlas = ExtResource("1_vvqtm")
+region = Rect2(84, 0, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqxow"]
+animations = [{
+"frames": [{
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_ipupf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fnvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fekia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uih2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_748mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipupf")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 13.0
+}]
+
+[node name="Cherry" type="Area2D"]
+script = SubResource("GDScript_ehekc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3jdx2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, 0)
+sprite_frames = SubResource("SpriteFrames_xqxow")
+animation = &"Idle"
+frame_progress = 0.418326
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
