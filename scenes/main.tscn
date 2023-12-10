@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6miyt28u4lla"]
+[gd_scene load_steps=16 format=3 uid="uid://b6miyt28u4lla"]
 
 [ext_resource type="Script" path="res://BG.gd" id="1_ipg8b"]
 [ext_resource type="Texture2D" uid="uid://o2leabmackll" path="res://BG Image.png" id="2_feuur"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dbypwdgfdngi4" path="res://Small Cloud 1.png" id="4_ea0hq"]
 [ext_resource type="Texture2D" uid="uid://fv0ffs8vhs6p" path="res://middle.png" id="5_710bg"]
 [ext_resource type="PackedScene" uid="uid://c7vafw1bu5jib" path="res://scenes/Cherry.tscn" id="9_f47ky"]
+[ext_resource type="PackedScene" uid="uid://cp4ey51holp84" path="res://scenes/LevelFinish.tscn" id="10_thasu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xv1y7"]
 texture = ExtResource("2_tsbcu")
@@ -506,6 +507,15 @@ func _process(delta):
 	text = \"Gold: \" + str(Game.gold)
 "
 
+[sub_resource type="GDScript" id="GDScript_8sk3t"]
+script/source = "extends Timer
+
+var level_start_time : float = 0
+
+func _on_timeout():
+	pass # Replace with function body.
+"
+
 [node name="Node2" type="Node"]
 
 [node name="BG" type="ParallaxBackground" parent="."]
@@ -640,8 +650,20 @@ theme_override_font_sizes/font_size = 22
 text = "Gold"
 script = SubResource("GDScript_hhj76")
 
+[node name="Timer" type="Timer" parent="UI"]
+script = SubResource("GDScript_8sk3t")
+
+[node name="Time" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="collectables" type="Node2D" parent="."]
 
 [node name="Cherry" parent="collectables" instance=ExtResource("9_f47ky")]
 position = Vector2(150, 366)
 scale = Vector2(1.43657, 1.50836)
+
+[node name="LevelFinish" parent="." instance=ExtResource("10_thasu")]
+position = Vector2(1126, 308)
+
+[connection signal="timeout" from="UI/Timer" to="UI/Timer" method="_on_timeout"]

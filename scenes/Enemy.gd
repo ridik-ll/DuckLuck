@@ -42,15 +42,10 @@ func _on_player_kill_body_entered(body):
 	if body.name == "main_character":
 		death()
 
-
-
-
-
 func _on_player_collision_body_entered(body):
 	if body.name == "main_character":
 		Game.Player_HP -= 3
 		death()
-		
 		
 func death():
 	Game.gold += 1

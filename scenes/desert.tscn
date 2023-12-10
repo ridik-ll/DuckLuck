@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvxbn18kjg2gb"]
+
+[ext_resource type="PackedScene" uid="uid://113s8qejr66d" path="res://BG.tscn" id="1_heviv"]
+[ext_resource type="Script" path="res://scenes/desert.gd" id="1_l8300"]
+[ext_resource type="Theme" uid="uid://dq3ia55xkg353" path="res://Dedault1.tres" id="2_tt3ov"]
+
+[node name="Desert" type="Node"]
+script = ExtResource("1_l8300")
+
+[node name="BG" parent="." instance=ExtResource("1_heviv")]
+
+[node name="Level1" type="Button" parent="."]
+texture_filter = 1
+offset_left = 172.0
+offset_top = 249.0
+offset_right = 309.0
+offset_bottom = 370.0
+theme = ExtResource("2_tt3ov")
+text = "1
+"
+
+[node name="Level2" type="Button" parent="."]
+texture_filter = 1
+offset_left = 364.0
+offset_top = 244.0
+offset_right = 513.0
+offset_bottom = 370.0
+theme = ExtResource("2_tt3ov")
+text = "2"
+
+[node name="Level3" type="Button" parent="."]
+texture_filter = 1
+offset_left = 552.0
+offset_top = 251.0
+offset_right = 695.0
+offset_bottom = 368.0
+theme = ExtResource("2_tt3ov")
+text = "3"
+
+[node name="Level4" type="Button" parent="."]
+texture_filter = 1
+offset_left = 762.0
+offset_top = 247.0
+offset_right = 899.0
+offset_bottom = 371.0
+theme = ExtResource("2_tt3ov")
+text = "4"
+
+[node name="Boss" type="Button" parent="."]
+texture_filter = 1
+offset_left = 941.0
+offset_top = 236.0
+offset_right = 1108.0
+offset_bottom = 386.0
+theme = ExtResource("2_tt3ov")
+text = "Boss
+"
+
+[connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Boss" to="." method="_on_boss_pressed"]
