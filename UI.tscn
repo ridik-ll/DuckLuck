@@ -9,10 +9,10 @@ script = ExtResource("1_emuhj")
 
 [node name="Play" type="Button" parent="."]
 texture_filter = 1
-offset_left = 477.0
-offset_top = 399.0
-offset_right = 723.0
-offset_bottom = 496.0
+offset_left = 476.0
+offset_top = 304.0
+offset_right = 722.0
+offset_bottom = 401.0
 theme = ExtResource("2_st5cu")
 text = "Play"
 
@@ -26,6 +26,15 @@ theme = ExtResource("2_st5cu")
 text = "Quit"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_frlr8")]
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 477.0
+offset_top = 412.0
+offset_right = 724.0
+offset_bottom = 512.0
+theme = ExtResource("2_st5cu")
+text = "Options"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
