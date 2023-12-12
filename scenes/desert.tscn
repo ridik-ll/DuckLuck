@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvxbn18kjg2gb"]
+[gd_scene load_steps=4 format=3 uid="uid://cdxobex8sadml"]
 
-[ext_resource type="PackedScene" uid="uid://113s8qejr66d" path="res://BG.tscn" id="1_heviv"]
+[ext_resource type="PackedScene" path="res://BG.tscn" id="1_heviv"]
 [ext_resource type="Script" path="res://scenes/desert.gd" id="1_l8300"]
-[ext_resource type="Theme" uid="uid://dq3ia55xkg353" path="res://Dedault1.tres" id="2_tt3ov"]
+[ext_resource type="Theme" uid="uid://1vuhm1dnh6kf" path="res://Dedault1.tres" id="2_tt3ov"]
 
 [node name="Desert" type="Node"]
 script = ExtResource("1_l8300")
